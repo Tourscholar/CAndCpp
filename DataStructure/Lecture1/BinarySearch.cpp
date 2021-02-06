@@ -46,11 +46,11 @@ List ReadInput()
     ElementType tmp;
     List L = new LNode[sizeof(struct LNode)];
     cin >> N;
-    L->Last = N;
+    L->Last = N-1;
     for (i = 0; i < N; i++)
     {
         cin >> tmp;
-        L->Data[i+1] = tmp;
+        L->Data[i] = tmp;
     }
 
     return L;
