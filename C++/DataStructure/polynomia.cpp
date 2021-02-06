@@ -1,10 +1,12 @@
 #include <iostream>
 #include <cmath>
-#define MAXN 10
-#define MAXK le7
+/**
+ * 两种算法求解给定多项式在给定定点x处的值
+ */
 double functionOne(int n, double a[], double x);
 double functionTwo(int n, double a[], double x);
 
+ /* f(x) = a0 +a1*x+...+an-1*x^(n-1)+an*x^n */
 double functionOne(int n, double a[], double x)
 {
     int i;
@@ -16,6 +18,7 @@ double functionOne(int n, double a[], double x)
     return p;
 }
 
+ /* f(x) = a0 + x*(a1+x*(...(an-1+x*(an))...)) */
 double functionTwo(int n, double a[], double x)
 {
     int i;
