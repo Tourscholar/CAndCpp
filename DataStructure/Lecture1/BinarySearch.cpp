@@ -1,12 +1,30 @@
 #include <iostream>
-#include <cstdlib>
-
-/*
-算法的时间复杂度为O(logN), 二分查找的前提条件：
-    1. 存储方式为顺序存储，不能是链式存储！
-    2. 数据是有序的！
-*/
 using namespace std;
+
+/* 函数接口定义:
+   Position BinarySearch(List L, ElementType X);
+   其中List结构定义如下:
+
+   typedef int Position;
+   typedef struct LNode * List;
+   struct LNode {
+       ElementType Data[MAXSIZE];
+       Position Last;   //保存线性表中最后一个元素的位置
+   };
+
+   输入样例:
+   5
+   12 31 55 89 101
+   31
+   输出样例:
+   1
+   
+/*  
+    二分查找算法
+    算法的时间复杂度为O(logN), 二分查找的前提条件：
+        1. 存储方式为顺序存储，不能是链式存储
+        2. 数据是有序的
+*/
 #define MAXSIZE 10
 #define NotFound 0
 
