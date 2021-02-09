@@ -95,7 +95,7 @@ void Print(Polynomial p) {
     }
 
     while (p) {
-        cout << p->coef << p->exp;
+        cout << p->coef << " " << p->exp;
         p = p->next;
         if (p)
             cout << " ";
