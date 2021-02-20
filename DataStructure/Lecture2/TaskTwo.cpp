@@ -118,7 +118,7 @@ Polynomial Add(Polynomial p1, Polynomial p2) {
             p2 = p2->next;
         }
         else if (p1->exp > p2->exp) {
-            coef - p1->coef;
+            coef = p1->coef;
             exp = p1->exp;
             p1 = p1->next;
         }
