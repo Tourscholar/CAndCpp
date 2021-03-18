@@ -1,6 +1,10 @@
 #include <iostream>
 using namespace std;
 
+/**
+ * 选择排序
+ */
+
 int main(){
     int arr [] = {4,5,1,2,3,7,6,9,8};
     int length = sizeof(arr) / sizeof(arr[0]);
