@@ -18,8 +18,7 @@ int main(){
         arr[MinPos] = tmp;
     }
     cout << endl;
-    for(int i = 0; i < length; i++){
+    for(int i = 0; i < length; i++)
         cout << arr[i] << " ";
-    }
     return 0;
 }
