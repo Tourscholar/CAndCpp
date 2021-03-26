@@ -26,6 +26,7 @@ BinTree ReconstructBinTree(ElementType preOrder[], ElementType inOrder[], int a1
 void PreOrderTraversal(BinTree bt);
 void InOrderTraversal(BinTree bt);
 void PostOrderTraversal(BinTree bt);
+void FreeBinTree(BinTree bt);
 
 int CountTreeNode(BinTree bt);
 int GetTreeDepth(BinTree bt);
@@ -48,7 +49,7 @@ int main(int argc, char const * argv[])
 
     cout << "Number of tree modes = " << CountTreeNode(bt) << endl;
     cout << "Depth of binary tree = " << GetTreeDepth(bt) << endl;
-
+    FreeBinTree(bt);
     return 0;
 }
 
@@ -117,6 +118,14 @@ void PostOrderTraversal(BinTree bt){
         PostOrderTraversal(bt->Left);
         PostOrderTraversal(bt->Right);
         cout << bt->Data << endl;
+    }
+}
+
+void FreeBinTree(BinTree bt){
+    if(bt){
+        FreeBinTree(bt->Left);
+        FreeBinTree(bt->Right);
+        delete bt;
     }
 }
 
