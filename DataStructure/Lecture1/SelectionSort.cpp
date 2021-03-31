@@ -57,7 +57,8 @@ int BinarySearchOne(int * arrs, int numsize, int target){
 int BinarySearchTwo(int * arrs, int left, int right, int value)
 {
     // 使用位运算右移一位
-    int mid = left + ((right - left) >> 1);
+    int mid = 0;
+    mid = left + ((right - left) >> 1);
     if(left > right)
         return -1;
     if(arrs[mid] == value)
