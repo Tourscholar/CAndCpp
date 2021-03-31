@@ -1,7 +1,8 @@
 #include <iostream>
 using namespace std;
 
-int BinarySearch(int[], int, int);
+int BinarySearchOne(int[], int, int);
+int BinarySearchTwo(int[], int, int, int);
 /**
  * 选择排序
  */
@@ -24,15 +25,16 @@ int main(){
     }
     
     cout << endl;
-    cout << BinarySearch(arr, length, 9) << endl;
+    cout << BinarySearchOne(arr, length, 9) << endl;
+    cout << BinarySearchTwo(arr, 0, length - 1, 9) << endl;
     for(int i = 0; i < length; i++)
         cout << arr[i] << " ";
     return 0;
 }
 /**
- * 二分搜索
+ * 二分搜索的非递归实现
  */
-int BinarySearch(int * arrs, int numsize, int target){
+int BinarySearchOne(int * arrs, int numsize, int target){
     int right = numsize - 1;
     int left = 0;
     int mid = 0;
@@ -46,4 +48,21 @@ int BinarySearch(int * arrs, int numsize, int target){
             left = mid + 1;
     }
     return -1;
+}
+
+/**
+ * 二分搜素的递归实现
+ */
+int BinarySearchTwo(int * arrs, int left, int right, int value)
+{
+    int mid = 0;
+    if(left > right)
+        return -1;
+    mid = (left + right) / 2;
+    if(arrs[mid] == value)
+        return mid;
+    else if(arrs[mid] > value)
+        return BinarySearchTwo(arrs, left, mid-1, value);
+    else if(arrs[mid] < value)
+        return BinarySearchTwo(arrs, mid+1, right, value);
 }
