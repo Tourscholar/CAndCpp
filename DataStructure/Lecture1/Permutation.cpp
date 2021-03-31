@@ -10,7 +10,7 @@ void pertation(char[], int, int);
 
 int main()
 {
-    char arr[] = {'a', 'b', 'c'};
+    char arr[] = {'a', 'b', 'c', 'd'};
     int length = sizeof(arr) / sizeof(arr[0]);
     pertation(arr, 0, length - 1);
 
