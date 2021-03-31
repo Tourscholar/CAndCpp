@@ -39,7 +39,7 @@ int BinarySearchOne(int * arrs, int numsize, int target){
     int left = 0;
     int mid = 0;
     while(left <= right){
-        mid = (left + right) / 2;
+        mid = left + ((right - left) >> 1);
         if(arrs[mid] == target)
             return mid;
         else if(arrs[mid] > target)
@@ -55,10 +55,9 @@ int BinarySearchOne(int * arrs, int numsize, int target){
  */
 int BinarySearchTwo(int * arrs, int left, int right, int value)
 {
-    int mid = 0;
+    int mid = left + ((right - left) >> 1);
     if(left > right)
         return -1;
-    mid = (left + right) / 2;
     if(arrs[mid] == value)
         return mid;
     else if(arrs[mid] > value)
