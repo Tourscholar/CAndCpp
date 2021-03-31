@@ -15,7 +15,7 @@ using namespace std;
 */
 #define DEBUG 0
 
-struct PolyNode
+class PolyNode
 {
     public:
         int coef;
