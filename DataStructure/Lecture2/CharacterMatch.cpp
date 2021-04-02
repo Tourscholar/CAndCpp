@@ -8,8 +8,10 @@ int ViolentMatch(char[], char[]);
 
 // KMP算法
 void print_matching_result(const char[], int);
+// 求D[j]的最长前缀后缀公共子缀和
 void cacl_lps(int[], const char[]);
 void kmp(const char[], const char[]);
+
 int main(){
     char s [] ="BBC ABCDAB ABCDABCDABDE";
     char p [] ="ABCDABD";
