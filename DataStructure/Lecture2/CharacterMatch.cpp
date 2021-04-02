@@ -6,7 +6,9 @@ using namespace std;
 int ViolentMatch(char[], char []);
 
 int main(){
-
+    char s [] = {'B', 'B', 'C', 'A', 'B', 'C', 'D', 'A', 'B', 'A', 'B', 'C', 'D','A', 'B', 'C', 'D', 'A', 'B', 'D'};
+    char p [] = {'A', 'B', 'C', 'D', 'A', 'B', 'D'};
+    cout << ViolentMatch(s, p);
 }
 
 int ViolentMatch(char * s, char * p)
