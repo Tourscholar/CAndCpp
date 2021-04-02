@@ -16,6 +16,10 @@ int main(){
     char s [] ="BBC ABCDAB ABCDABCDABDE";
     char p [] ="ABCDABD";
     cout << ViolentMatch(s, p);
+
+    kmp(s, p);
+
+    return 0;
 }
 
 int ViolentMatch(char * s, char * p)
@@ -47,7 +51,7 @@ int ViolentMatch(char * s, char * p)
 void calc_lps(int d[], const char * p)
 {
     int i = 1, j = 0, np = strlen(p);
-    int d[np] = {0};
+    d[np] = {0};
     while(i < np){
         if(p[j] == p[i])
             d[i++] = ++j;
