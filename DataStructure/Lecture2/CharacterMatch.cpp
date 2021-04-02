@@ -1,13 +1,18 @@
 #include <iostream>
 #include <cstring>
 using namespace std;
+#define SIZE 100
 
 // 暴力匹配
-int ViolentMatch(char[], char []);
+int ViolentMatch(char[], char[]);
 
+// KMP算法
+void print_matching_result(const char[], int);
+void cacl_lps(int[], const char[]);
+void kmp(const char[], const char[]);
 int main(){
-    char s [] = {'B', 'B', 'C', 'A', 'B', 'C', 'D', 'A', 'B', 'A', 'B', 'C', 'D','A', 'B', 'C', 'D', 'A', 'B', 'D'};
-    char p [] = {'A', 'B', 'C', 'D', 'A', 'B', 'D'};
+    char s [] ="BBC ABCDAB ABCDABCDABDE";
+    char p [] ="ABCDABD";
     cout << ViolentMatch(s, p);
 }
 
@@ -35,4 +40,43 @@ int ViolentMatch(char * s, char * p)
         return i - j;
     else 
         return - 1;
+}
+
+void calc_lps(int d[], const char * p)
+{
+    int i = 1, j = 0, np = strlen(p);
+    int d[np] = {0};
+    while(i < np){
+        if(p[j] == p[i])
+            d[i++] = ++j;
+        else{
+            if(j > 0)
+                j = d[j-1];
+            else 
+                i++;
+        }
+    }
+}
+
+void kmp(const char * t, const char * p)
+{
+    int d[SIZE];
+    calc_lps(d, p);
+    int i = 0, j = 0, nt = strlen(t), np = strlen(p);
+    while(i < nt){
+        if(p[j] == t[i]){
+            i++;
+            j++;
+            if(i == np){
+                print_matching_result(p, i-j);
+                j = d[np-1];
+            }
+        }
+        else{
+            if(j > 0)
+                j = d[j-1];
+            else 
+                i++;
+        }
+    }
 }
