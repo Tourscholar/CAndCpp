@@ -9,7 +9,7 @@ int ViolentMatch(char[], char[]);
 // KMP算法
 void print_matching_result(const char[], int);
 // 求D[j]的最长前缀后缀公共子缀和
-void cacl_lps(int[], const char[]);
+void GetDarray(int[], const char[]);
 void kmp(const char[], const char[]);
 
 int main(){
@@ -48,7 +48,7 @@ int ViolentMatch(char * s, char * p)
         return - 1;
 }
 
-void calc_lps(int d[], const char * p)
+void GetDarray(int d[], const char * p)
 {
     int i = 1, j = 0, np = strlen(p);
     d[np] = {0};
@@ -67,7 +67,7 @@ void calc_lps(int d[], const char * p)
 void kmp(const char * t, const char * p)
 {
     int d[SIZE];
-    calc_lps(d, p);
+    GetDarray(d, p);
     int i = 0, j = 0, nt = strlen(t), np = strlen(p);
     while(i < nt){
         if(p[j] == t[i]){
