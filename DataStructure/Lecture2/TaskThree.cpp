@@ -24,9 +24,11 @@ class SparseMatrix{
         int  capacity;
     public:
         SparseMatrix(int maxSz = MAXSIZE);
+        // 稀疏矩阵的置换
         SparseMatrix Transpose();
 };
 
+// 稀疏矩阵的置换
 SparseMatrix SparseMatrix::Transpose(){
     int * rowSize = new int[cols];
     int * rowStart = new int[cols];
