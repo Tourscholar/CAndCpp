@@ -75,7 +75,6 @@ void kmp(const char * t, const char * p)
             j++;
             if(i == np){
                 print_matching_result(p, i-j);
-                j = d[np-1];
             }
         }
         else{
