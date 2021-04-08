@@ -13,8 +13,8 @@ int main(void)
 {
 	int a = 5, b = 7;
 	char c = 'c', d = 'd';
-	Swap(a, b);
-	Swap(c, d);
+	Swap<int>(a, b);
+	Swap<char>(c, d);
 	cout << "a = " << a << ", b = " << b << endl;
 	cout << "c = " << c << ", d = " << d << endl;
 
