@@ -80,12 +80,12 @@ void FreeList(List L)
 
 Position BinarySearch(List L, ElementType X)
 {
-    Position left = 1, right = L->Last;
+    Position left = 0, right = L->Last;
     Position pos = NotFound;
 
     while (right >= left)
     {
-        Position mid = (left+right) / 2;
+        Position mid = (left+right) >> 1;
         if (L->Data[mid] == X)
         {
             pos = mid;
